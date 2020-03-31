@@ -1,0 +1,34 @@
+<!-- remember to run npm init --yes, npm install, and npm run build in the directory with the package.json file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h3>My To Do List</h3>
+    <form v-on:submit.prevent="addNewChore">
+      <label for="new-chore">Add new chore:</label>
+      <input id="new-chore" type="text" v-model="newChore.name" />
+      <label for="high">High</label>
+      <input type="radio" id="high" v-model="newChore.priority" value="high">
+      <label for="low">Low</label>
+      <input type="radio" id="low" v-model="newChore.priority" value="low">
+      <input type="submit" value="Save New Chore" />
+    </form>
+    <ul>
+      <li v-for="(chore,index) in chores" class="chore.isDone ? 'done' : 'not-done'">
+        <span :class="chore.priority">{{ chore.name }}</span>
+        <span v-if="chore.isDone"> <label id="finished-label">FINISHED!</label></span> 
+        <button v-if="!chore.isDone" v-on:click="getChoreDone(index)">Get 'r' done</button>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

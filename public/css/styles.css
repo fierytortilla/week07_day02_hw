@@ -1,0 +1,55 @@
+#app {
+  /* display: flex; */
+  width: 60%;
+  margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+  color: white;
+}
+
+body {
+  background-color: blue;
+  background-image: url(https://media.giphy.com/media/ENth1428H9YBO/giphy.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+li {
+  padding: 7px;
+}
+
+.high {
+  border: 2px solid #f2360c;
+  color: #f2360c;
+}
+
+.low {
+  border: 2px solid #1a681e;
+}
+
+input[type="text"] {
+  width: 30%;
+  margin: 0 auto;
+}
+
+#finished-label {
+  color: red;
+  padding-left: 20px;
+}
+
+button{
+  /* justify-content: space-around;
+  position: relative; */
+  align-self: flex-end;
+  left: 200px;
+  width: 20%;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid #000;
+  padding-left: 10px;
+}
+
+form {
+  width: 100%;
+  margin-top: 10px;
+}
